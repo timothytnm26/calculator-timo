@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+// variables
+$primary_color:#73B4FF;
+$background_color:#F1F3F6;
+$calculator_background_color: lighten($primary_color, 25);
+$button_color:lighten($primary_color, 20);
+$button_shadow: darken($primary_color, 2);
+
+$white: #ffffff;
+$black: #000000;
+
+$text_color: darken($primary_color, 35);
+$font:"Orbitron",sans-serif;
+$font_size: 18px;
+$bold: 600;
+$regular: 300;
+
+
+$shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+
+.dark {
+    $text_color:#F1F3F6;
+    $background_color:#141518;
+    $primary_color:#141518
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.app{
+    background-color: $background_color;
+    font-weight: $bold;
+    font-size: 24px;
+    display:flex;
+    position: absolute; top: 0; left: 0; right:0;bottom: 0;
+}
+
+@media only screen and (max-width: 800px) {
+    body {
+        display: unset;
+        padding-top: 0;
+    }
+}
+
+
+
+
+

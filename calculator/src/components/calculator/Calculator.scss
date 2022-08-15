@@ -1,0 +1,84 @@
+@import './../../App.scss';
+
+.calculator {
+    height: 95%;
+    width: 360px;    
+    margin: auto;
+    overflow: hidden;
+    border-radius: 20px;
+    background-color: $calculator_background_color;
+    box-shadow:  6px 6px 18px $button_shadow, -6px -6px 18px #ffffff;
+
+    display: grid;
+    justify-items: center;
+    justify-content: center;
+
+    .theme {
+        margin: 20px 0 0;
+        display: flex;
+        justify-content: flex-end;        
+    }
+
+    .screen {
+        position: relative;
+        padding: 10px;
+        overflow: hidden;
+        margin-bottom: 10px;                
+        width: 100%;
+        height: 16vh;             
+        border-radius: 15px;
+        text-align: right;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-end;
+        border: 2px solid $white;
+        background-color: $calculator_background_color;
+        box-shadow:  4px 4px 12px $button_shadow, -4px -4px 12px #ffffff;
+
+        .result {
+            align-items:flex-start;
+            font-size: 2*$font_size;
+            line-height: 1;
+            overflow: hidden;
+            transform-origin: right bottom;
+            transition: transform 0.3s ease;
+            color: $text_color;
+            font-family: $font;
+
+            &:last-child {
+                position: absolute;
+            }
+
+            span {
+                display: inline-block;
+                overflow: hidden;
+                transition: width 0.3s ease;
+            }
+        }
+    }
+
+    .number_pad{
+        display: flex;
+        justify-content: center;
+        align-items:flex-start;
+    }  
+    
+
+    @media only screen and (max-width: 800px) {
+        .calculator {
+            justify-content: center;
+            width: 100%;
+            height: 100vh;
+            border-radius: 0;
+        }
+    }
+    
+}
+
+
+.dark {
+    $text_color:#F1F3F6;
+    $primary_color:#141518
+}
+
