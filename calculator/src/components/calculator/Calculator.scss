@@ -73,11 +73,119 @@
             border-radius: 0;
         }
     }
+
+    #orange{
+        background: #FBC6A4; 
+    }
+    #white{
+        background:#F1F3F6;
+    }
+    #green{
+        background: #65ff79;
+    }
+    #blue{
+        background: #73B4FF;
+    }
+    #gray{
+        background: #292929;
+    }
     
 }
 
-.dark {
-    $text_color:#F1F3F6;
-    $primary_color:#141518
-}
+.calculator {
+    &.orange {
+    background-color: #FBC6A4;
+    box-shadow:  6px 6px 18px #FBC6A4, -6px -6px 18px #ffffff;
 
+    display: grid;
+    justify-items: center;
+    justify-content: center;
+
+        .screen {
+            border: 2px solid #ffffff;
+            background-color: #FBC6A4;
+            box-shadow:  4px 4px 12px #c66c34, -4px -4px 12px #ffffff;
+
+            .result {       
+                color: #ff6200;
+            }
+        }
+    }
+
+    &.green {
+        background-color: #78e085;
+        box-shadow:  6px 6px 18px #2d9d3c, -6px -6px 18px #ffffff;
+    
+        display: grid;
+        justify-items: center;
+        justify-content: center;
+    
+            .screen {
+                border: 2px solid #ffffff;
+                background-color: #78e085;
+                box-shadow:  4px 4px 12px #4d9056, -4px -4px 12px #ffffff;
+    
+                .result {       
+                    color: #0ca220;
+                }
+            }
+        }
+
+    &.white {
+        background-color: #F1F3F6;
+        box-shadow:  6px 6px 18px #818284, -6px -6px 18px #ffffff;
+    
+        display: grid;
+        justify-items: center;
+        justify-content: center;
+    
+            .screen {
+                border: 2px solid #ffffff;
+                background-color: #F1F3F6;
+                box-shadow:  4px 4px 12px #838486, -4px -4px 12px #ffffff;
+    
+                .result {       
+                    color: #292929;
+                }
+            }
+    }
+
+
+    &.blue {
+        background-color: #73B4FF;
+        box-shadow:  6px 6px 18px #588ac4, -6px -6px 18px #ffffff;
+    
+        display: grid;
+        justify-items: center;
+        justify-content: center;
+    
+            .screen {
+                border: 2px solid #ffffff;
+                background-color: #73B4FF;
+                box-shadow:  4px 4px 12px #165eb0, -4px -4px 12px #ffffff;
+    
+                .result {       
+                    color: #3483dd;
+                }
+            }
+    }
+    
+    &.gray {
+        background-color: #292929;
+        box-shadow:  6px 6px 18px #161616, -6px -6px 18px #ffffff;
+    
+        display: grid;
+        justify-items: center;
+        justify-content: center;
+    
+            .screen {
+                border: 2px solid #ffffff;
+                background-color: #292929;
+                box-shadow:  4px 4px 12px #191919, -4px -4px 8px #a8a8a8;
+    
+                .result {       
+                    color: #F1F3F6;
+                }
+            }
+    }
+}

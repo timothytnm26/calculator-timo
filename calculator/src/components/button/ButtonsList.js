@@ -3,7 +3,6 @@ export const BUTTON_ACTION = {
     ADD: 'ADD',
     DELETE: 'DELETE',
     EQUAL: 'EQUAL',
-    THEME:'THEME'
 }
 
 export const button_list = [

@@ -9,35 +9,78 @@
     grid-template-columns: 64px 64px 64px 64px;
     grid-template-rows: 64px 64px 64px 64px;
 
-    &_number, &_operator, &_other, &_equal, &_theme {
+    &_number, &_operator, &_other, &_equal, &_theme, &_theme_item {
         font-family: $font;
         width: 64px;
-        height: 64px;
-        color: $text_color;
-        font-size: $font_size;
-        border-radius: 0.5em;
-        background: $button_color;
-        border: 2px solid $white;
+        height: 64px;        
+        font-size: $font_size;        
+        border-radius: 0.5em;        
         transition: all .3s;
-        box-shadow: 3px 3px 6px $button_shadow, -6px -6px 12px $white;
+
+        &.orange{
+            background: #FBC6A4; 
+            color: #ff8e47;
+            border: 2px solid #ffffff;
+            box-shadow: 3px 3px 6px #d56f30, -3px -3px 6px #ffffff;
+        }
+        &.white{
+            background:#F1F3F6;
+            color: #292929;
+            border: 2px solid #ffffff;
+            box-shadow: 3px 3px 6px #393939, -3px -3px 6px #ffffff;
+        }
+        &.green{
+            background: #78e085;
+            color: #dcdcdc;
+            border: 2px solid #bfbfbf;
+            box-shadow: 3px 3px 6px #4a8a53, -3px -3px 6px #ffffff;
+        }
+        &.blue{
+            background: #73B4FF;
+            color: #3483dd;
+            border: 2px solid #ffffff;
+            box-shadow: 3px 3px 6px #165eb0, -3px -3px 6px #ffffff;
+        }
+        &.gray{
+            background: #292929;
+            color: #ffffff;
+            border: 2px solid #292929;
+            box-shadow: 3px 3px 6px #000000, -3px -3px 6px #F1F3F6;
+        }
     }
     &_equal {
-        background: darken($button_color, 30);
         border: 2px solid $white;
-        color: $white;
+        &.orange{
+            background:#ff8e47;
+            color:#ffffff}
+        &.white{
+            background:#292929;
+            color:#F1F3F6}
+        &.green{
+            background:#4a8a53;
+            color:#ffffff}
+        &.blue{
+            background:#165eb0;
+            color:#ffffff}
+        &.gray{
+            background:#F1F3F6;
+            color:#292929}
     }
-    &_theme {
+    &_theme_item {
         display: flex;
         align-items: center;
         justify-content: center;
         margin-left: 10px;
         width: 42px;
-        height: 42px;        
+        height: 42px;
+        border: 2px solid #ffffff;        
         border-radius: 1.5em;
+        box-shadow: -2px -2px 6px #ffffff, 2px 2px 6px #636363;
         &:active {
             //box-shadow: 2px 2px 6px lighten($primary_color, 10), -2px -2px 6px #ffffff;
             box-shadow: -2px -2px 6px $white, -2px -2px 6px $white;
-           }             
+        }      
+
     }       
     :active {
         //box-shadow: 2px 2px 6px lighten($primary_color, 10), -2px -2px 6px #ffffff;

@@ -1,5 +1,5 @@
 /* eslint no-eval: 0 */
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import './../../App.scss'
 import './Calculator.scss'
 import './../button/Button.scss'
@@ -12,14 +12,22 @@ const Calculator = () => {
     const expressionRef = useRef(null);
 
     const [expression, setExpression] = useState('');
+    const [theme, setTheme] = useState('white');
+
+    useEffect (()=>{
+        const currentTheme = localStorage.getItem('theme-color')
+        if (currentTheme) {
+            setTheme(currentTheme)
+        }
+    }, [])
+
+    const toggleTheme = (theme) => {
+        setTheme(theme); 
+        localStorage.setItem('theme-color', theme)
+    }
 
     const buttonClick = (item) => {
         const expressionDisplay = expressionRef.current;
-
-        if (item.action === BUTTON_ACTION.THEME) {
-            let ele = document.body;
-            ele.classList.toggle('dark');
-        };
 
         if (item.action === BUTTON_ACTION.ADD) {
             addSpan(item.label);
@@ -89,14 +97,19 @@ const Calculator = () => {
 
 
     return (
-        <div className="calculator">
+        <div className={`calculator ${theme}`}>
             {/* THEME AREA */}
-            <div className='theme'>            
-                <button
-                    className='buttons_theme'
-                    onClick = {() => buttonClick({action:'THEME'})}>
-                    <img src="../icons/sun.svg" alt="light" style={{ height: 24, width: 24 }}/>
-                </button>
+            <div className='theme'>
+                <button className='buttons_theme_item' id='white'
+                onClick={()=> toggleTheme('white')}></button>
+                <button className='buttons_theme_item' id='green'
+                onClick={()=> toggleTheme('green')}></button>
+                <button className='buttons_theme_item' id='orange'
+                onClick={()=> toggleTheme('orange')}></button>
+                <button className='buttons_theme_item' id='blue'
+                onClick={()=> toggleTheme('blue')}></button>
+                <button className='buttons_theme_item' id='gray'
+                onClick={()=> toggleTheme('gray')}></button>
             </div>
 
             {/* SCREEN AREA */}
@@ -107,11 +120,11 @@ const Calculator = () => {
 
              {/* BUTTONS AREA */}
             <div className='number_pad'>
-                <div ref={buttonsRef} className="buttons">
+                <div ref={buttonsRef} className="buttons"> 
                 {
                     button_list.map((item) => (
                         <button
-                            className={'buttons_' + item.class}
+                            className={`buttons_${item.class} ${theme}`}
                             onClick={() => buttonClick(item)}
                         >
                             {item.label}
